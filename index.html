@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk-UA">
 <head>
   <link rel="stylesheet" href="css/main.css">
   <meta charset="UTF-8">
@@ -12,9 +12,11 @@
     <h1>Money-Table</h1>
     <thead>
       <tr>
-        <th scope="row" colspan="1"><button onClick="window.location.reload();">Оновити курси банків</button></th>
-        <th colspan="1"><input type="text" placeholder="Курс обмінника"></th>
-        <th colspan="1"><input type="text" placeholder="Сума обміну"></th>
+        <th scope="row" colspan="1">
+          <button onClick="window.location.reload();">↻ банки</button>
+          <button class="submit-btn">--></button></th>
+        <th colspan="1"><input class="exchengeCount" type="text" placeholder="Курс обмінника"></th>
+        <th colspan="1"><input class="CountUAH" type="text" placeholder="Сума обміну"></th>
       </tr>
     </thead>
     <thead>
@@ -26,7 +28,7 @@
     </thead>
     <tbody>
       <tr class="privatbank">
-        <td>ПриватБанк</td>
+        <td>ПриватБанк(<span class="privatCardCount"></span>)(<span class="privatCashCount"></span>)</td>
         <td class="card"></td>
         <td class="cash"></td>
       </tr>
@@ -192,6 +194,9 @@
       </tr>
     </tbody>
   </table>
+
+  <button class="but-privat-card">but-privat-card</button>
+  <button class="but-privat-cash">but-privat-cash</button>
 
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   <script src="js/loadCurrencyAndPutInConst.js"></script>
