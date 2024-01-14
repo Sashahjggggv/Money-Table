@@ -1,0 +1,14 @@
+/* spacing */
+table {
+  table-layout: fixed;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  border: 1px solid black;
+}
