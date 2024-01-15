@@ -5,6 +5,7 @@ table {
   min-width: fit-content;
   width: 80%;
   border-collapse: collapse;
+  margin-bottom: 50px;
 }
 
 input {
@@ -16,4 +17,16 @@ th,
 td {
   padding: 5px 10px;
   border: 1px solid black;
+}
+
+.reload-btn,.submit-btn {
+  width: 40%;
+  height: 80%;
+}
+
+.green {
+  color: #F1C40F;
+}
+.red {
+  color: #EE4B2B;
 }

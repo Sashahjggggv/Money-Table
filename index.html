@@ -13,183 +13,251 @@
     <thead>
       <tr>
         <th scope="row" colspan="1">
-          <button onClick="window.location.reload();">↻ банки</button>
-          <button class="submit-btn">--></button></th>
-        <th colspan="1"><input class="exchengeCount" type="text" placeholder="Курс обмінника"></th>
-        <th colspan="1"><input class="CountUAH" type="text" placeholder="Сума обміну"></th>
+          <button class="reload-btn" onClick="window.location.reload();">↻</button>
+          <button class="submit-btn">➜</button></th>
+        <th colspan="2"><input class="exchengeCount" type="text" placeholder="Курс обмінника"></th>
+        <th colspan="2"><input class="CountUAH" type="text" placeholder="Сума обміну"></th>
       </tr>
     </thead>
     <thead>
       <tr>
         <th scope="col">Банк</th>
-        <th scope="col">Вигода по картковому</th>
-        <th scope="col">Вигода по касовому</th>
+        <th scope="col">Курс по картковому, UAH</th>
+        <th scope="col">Вигода по картковому, UAH</th>
+        <th scope="col">Курс по касовому, UAH</th>
+        <th scope="col">Вигода по касовомy, UAH</th>
       </tr>
     </thead>
     <tbody>
       <tr class="privatbank">
-        <td>ПриватБанк(<span class="privatCardCount"></span>)(<span class="privatCashCount"></span>)</td>
+        <td>ПриватБанк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="">
+      <tr class="monobank">
         <td>МоноБанк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
-        <td class="cash"></td>
+        <td>-</td>
+        <td>-</td>
       </tr>
-      <tr class="">
+      <tr class="abank">
         <td>А-Банк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>ОщадБанк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Райфайзен</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="">
+      <tr class="otpbank">
         <td>Отп</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="">
+      <tr class="izibank">
         <td>IZI</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Пумб</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Глобус</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Комін</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Укргаз</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Восток</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Таском</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Південний</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Правекс</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Юнекс</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Кредит Дніпро</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Ідея-Банк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Укрексім</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>АльтБанк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Кредобанк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Міжнародний Інвестиційний</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Укрсиб</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Кредит-Вест</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Інвестицій та заощаджень</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Комінвест</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Піреус</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Скай</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Банк 3/4</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Креді Агріколь</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Sense Банк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Прокредит</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
       <tr class="">
         <td>Полтава Банк</td>
+        <td class="cardCount"></td>
         <td class="card"></td>
+        <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
     </tbody>
@@ -197,6 +265,18 @@
 
   <button class="but-privat-card">but-privat-card</button>
   <button class="but-privat-cash">but-privat-cash</button>
+  <button class="but-mono-card">but-mono-card</button>
+  <button class="but-abank-card">but-abank-card</button>
+  <button class="but-abank-cash">but-abank-cash</button>
+  <button class="but-otp-card">but-otp-card</button>
+  <button class="but-otp-cash">but-otp-cash</button>
+  <button class="but-izi-cash">but-izi-cash</button>
+  <button class="but-izi-card">but-izi-card</button>
+
+  <h3>Помилки завантаження курстів банку:</h3>
+  <div class="countsLoadErrors">
+
+  </div>
 
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
   <script src="js/loadCurrencyAndPutInConst.js"></script>
