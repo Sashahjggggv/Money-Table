@@ -2,6 +2,7 @@
 <html lang="uk-UA">
 <head>
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
 </head>
 <body>
   <table>
-    <h1>Money-Table</h1>
+    <!-- <h1>Money-Table</h1> -->
     <thead>
       <tr>
         <th scope="row" colspan="1">
@@ -78,6 +79,13 @@
         <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
+      <tr class="taskombank">
+        <td>Таском(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
       <tr class="pumbank">
         <td>Пумб(-1%-100грн замов)</td>
         <td class="cardCount"></td>
@@ -106,43 +114,8 @@
         <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="vostokbank">
-        <td>Восток(-0.5%)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="taskombank">
-        <td>Таском(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="pivdenbank">
-        <td>Південний(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
       <tr class="praveksbank">
         <td>Правекс(-0.6?%)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="unexbank">
-        <td>Юнекс(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="kreditdinrobank">
-        <td>Кредит Дніпро(-0.5%)</td>
         <td class="cardCount"></td>
         <td class="card"></td>
         <td class="cashCount"></td>
@@ -162,22 +135,8 @@
         <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="altbank">
-        <td>АльтБанк(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
       <tr class="kredobank">
         <td>Кредобанк(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="mignarinvestbank">
-        <td>Міжнародний Інвестиційний(-0.8?%)</td>
         <td class="cardCount"></td>
         <td class="card"></td>
         <td class="cashCount"></td>
@@ -190,15 +149,92 @@
         <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="kreditvestbank">
-        <td>Кредит-Вест(-0)</td>
+      <tr class="investzaoschbank">
+        <td>Інвестицій та заощаджень(-1%)</td>
         <td class="cardCount"></td>
         <td class="card"></td>
         <td class="cashCount"></td>
         <td class="cash"></td>
       </tr>
-      <tr class="investzaoschbank">
-        <td>Інвестицій та заощаджень(-1%)</td>
+      <tr class="krediagrikolebank">
+        <td>Креді Агріколь(-1%)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="sensebank">
+        <td>Sense Банк(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="prokreditbank">
+        <td>Прокредит(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr>
+        <td><b>Нема в Рівному:</b></td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="vostokbank">
+        <td>Восток(-0.5%)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="pivdenbank">
+        <td>Південний(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="unexbank">
+        <td>Юнекс(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="kreditdinrobank">
+        <td>Кредит Дніпро(-0.5%)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="altbank">
+        <td>АльтБанк(-0)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="mignarinvestbank">
+        <td>Міжнародний Інвестиційний(-0.8?%)</td>
+        <td class="cardCount"></td>
+        <td class="card"></td>
+        <td class="cashCount"></td>
+        <td class="cash"></td>
+      </tr>
+      <tr class="kreditvestbank">
+        <td>Кредит-Вест(-0)</td>
         <td class="cardCount"></td>
         <td class="card"></td>
         <td class="cashCount"></td>
@@ -227,27 +263,6 @@
       </tr>
       <tr class="threeforbank">
         <td>Банк 3/4(-1%)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="krediagrikolebank">
-        <td>Креді Агріколь(-1%)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="sensebank">
-        <td>Sense Банк(-0)</td>
-        <td class="cardCount"></td>
-        <td class="card"></td>
-        <td class="cashCount"></td>
-        <td class="cash"></td>
-      </tr>
-      <tr class="prokreditbank">
-        <td>Прокредит(-0)</td>
         <td class="cardCount"></td>
         <td class="card"></td>
         <td class="cashCount"></td>
@@ -335,6 +350,7 @@
   </div>
 
 	<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  <script src="js/rates.js"></script>
   <script src="js/loadCurrencyAndPutInConst.js"></script>
 </body>
 </html>

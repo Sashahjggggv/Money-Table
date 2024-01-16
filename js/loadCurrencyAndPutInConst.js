@@ -1,31 +1,5 @@
 var currentDate = new Date();
 
-// Вписати курси валют в банках на даний момент (Картковий і Готівковий)
-let oschadCard = 38.55; let oschadCash = 38.8; // 12:26
-let raifCard = 38.43; let raifCash = 38.5; // 12:26
-let pumbCard = 38.5; let pumbCash = 38.6; // 12:26
-let globusCard = 38.35; let globusCash = 38.7; // 12:26
-let kominCard = 38.25; let kominCash = 38.55; // 12:26
-let ukrgasCard = 38.35; let ukrgasCash = 38.7; // 12:26
-let vostokCard = 38.4; let vostokCash = "no"; // 12:26
-let taskomCard = "no"; let taskomCash = 38.6; // 12:26
-let praveksCard = 38.3; let praveksCash = 38.7; // 12:26
-let unexCard = 38.5; let unexCash = 38.85; // 12:26
-let kreditdinroCard = 38.5; let kreditdinroCash = 38.45; // 12:26
-let ideaCard = 38.4; let ideaCash = 38.8; // 12:26
-let altCard = 38.6; let altCash = 39; // 12:26
-let kredoCard = 38.87; let kredoCash = 38.64; // 12:26
-let ukrsibCard = 38.45; let ukrsibCash = 38.7; // 12:26
-let kreditvestCard = 38.1; let kreditvestCash = 38.7; // 12:26
-let investzaoschCard = 38.45; let investzaoschCash = 38.68; // 12:26
-let kominvestCard = 38.25; let kominvestCash = 38.55; // 12:26
-let skyCard = 38.4; let skyCash = 38.6; // 12:26
-let threeforCard = 38.5; let threeforCash = 38.1; // 12:26
-let krediagrikoleCard = 38.5; let krediagrikoleCash = 38.7; // 12:26
-let senseCard = 38.4; let senseCash = 38.6; // 12:26
-let prokreditCard = 38.45; let prokreditCash = 38.8; // 12:26
-let poltavaCard = 38.45; let poltavaCash = 38.79; // 12:26
-
 document.querySelector('.submit-btn').onclick = function clickAllButtons() {
   document.querySelector('.privatbank .card').classList.remove("green")
   document.querySelector('.privatbank .card').classList.remove("red")
