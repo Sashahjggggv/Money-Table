@@ -3,7 +3,6 @@ table {
   table-layout: fixed;
   min-width: -moz-fit-content;
   min-width: fit-content;
-  width: 80%;
   border-collapse: collapse;
   margin-bottom: 50px;
 }
