@@ -202,127 +202,79 @@ document.querySelector('.submit-btn').onclick = function clickAllButtons() {
 
 // приватбанк
 loadPrivatCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=11",
-    success: function(data) {
-      let exchengeCount = data.find(currency => currency.ccy === "USD").sale;
-      document.querySelector('.privatbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-privat-card').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value-100;
-        document.querySelector('.privatbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.privatbank .card').classList.add("green")
-        } else {
-          document.querySelector('.privatbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPrivatCard:', error);
+  let exchengeCount = privatCard;
+  document.querySelector('.privatbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-privat-card').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value-100;
+    document.querySelector('.privatbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.privatbank .card').classList.add("green")
+    } else {
+      document.querySelector('.privatbank .card').classList.add("red")
     }
-  });
+  }
 }; loadPrivatCard();
 loadPrivatCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5",
-    success: function(data) {
-      let exchengeCount = data.find(currency => currency.ccy === "USD").sale;
-      document.querySelector('.privatbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-privat-cash').onclick = function valueCard1() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.privatbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.privatbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.privatbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPrivatCash:', error);
+  let exchengeCount = privatCash;
+  document.querySelector('.privatbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-privat-cash').onclick = function valueCard1() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.privatbank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.privatbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.privatbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadPrivatCash();
 
 // монобанк
 loadMonoCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://api.monobank.ua/bank/currency",
-    success: function(data) {
-      let exchengeCount = data.find(currency => currency.currencyCodeA === 840).rateSell;
-      document.querySelector('.monobank .cardCount').textContent = exchengeCount;
-      
-      document.querySelector('.but-mono-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-0.009*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.monobank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.monobank .card').classList.add("green")
-        } else {
-          document.querySelector('.monobank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadMonoCard:', error);
+  let exchengeCount = monoCard;
+  document.querySelector('.monobank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-mono-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-0.009*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.monobank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.monobank .card').classList.add("green")
+    } else {
+      document.querySelector('.monobank .card').classList.add("red")
     }
-  });
+  }
 }; loadMonoCard();
 
 
 // а-банк
 loadAbankCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://a-bank.com.ua/backend/api/v1/rates",
-    success: function(data) {
-      let data1 = data.processing
-      let exchengeCount = data1.find(currency => currency.ccyA === "UAH" && currency.ccyB === "USD").rateA;
-      document.querySelector('.abank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-abank-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-0.009*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.abank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.abank .card').classList.add("green")
-        } else {
-          document.querySelector('.abank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadAbankCard:', error);
+  let exchengeCount = abankCard
+  document.querySelector('.abank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-abank-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-0.009*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.abank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.abank .card').classList.add("green")
+    } else {
+      document.querySelector('.abank .card').classList.add("red")
     }
-  });
+  }
 }; loadAbankCard();
 loadAbankCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://a-bank.com.ua/backend/api/v1/rates",
-    success: function(data) {
-      let data1 = data.data
-      let exchengeCount = data1.find(currency => currency.ccyA === "UAH" && currency.ccyB === "USD").rateA;
-      document.querySelector('.abank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-abank-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.abank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.abank .cash').classList.add("green")
-        } else {
-          document.querySelector('.abank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadAbankCash:', error);
+  let exchengeCount = abankCash
+  document.querySelector('.abank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-abank-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.abank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.abank .cash').classList.add("green")
+    } else {
+      document.querySelector('.abank .cash').classList.add("red")
     }
-  });
+  }
 }; loadAbankCash();
 
 
@@ -390,100 +342,62 @@ loadRaifCash = function() {
 
 // отпбанк
 loadOtpCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.otpbank.com.ua/local/components/otp/utils.kross_curr_rate/get_kross_curr_rate.php?curr_date="+currentDate.getDate()+".0"+currentDate.getMonth() + 1+".2024&ib_code=totpb_card_currency_rates",
-    success: function(data) {
-      let exchengeCount = JSON.parse(data).UAHUSD;
-      document.querySelector('.otpbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-otp-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-0.01*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.otpbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.otpbank .card').classList.add("green")
-        } else {
-          document.querySelector('.otpbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadOtpCard:', error);
+  let exchengeCount = otpCard;
+  document.querySelector('.otpbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-otp-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-0.01*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.otpbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.otpbank .card').classList.add("green")
+    } else {
+      document.querySelector('.otpbank .card').classList.add("red")
     }
-  });
+  }
 }; loadOtpCard();
 loadOtpCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.otpbank.com.ua/local/components/otp/utils.exchange_rate_smart/exchange_rate_by_date.php?curr_date="+currentDate.getDate()+".0"+currentDate.getMonth() + 1+".2024&ib_code=otpb_banking_exchange_rates&cache_time=0&settings_xml=%2Fvar%2Fwww%2Fsettings%2Flocal%2Fmodules%2Fotpb.soap_client_requests%2Fclasses%2Fgeneral%2FSoapClientList.xml&juridical=N&show_buy=Y&show_sale=Y&show_instead=-",
-    success: function(data) {
-      let data1 = JSON.parse(data).items;
-      let exchengeCount = data1.find(currency => currency.CODE === "USD \/ UAH").SELL;
-      document.querySelector('.otpbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-otp-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.otpbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.otpbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.otpbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadOtpCash:', error);
+  let exchengeCount = otpCash;
+  document.querySelector('.otpbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-otp-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.otpbank .cash').textContent = income.toFixed(2);
+    if (income > 0) {
+      document.querySelector('.otpbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.otpbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadOtpCash();
 
 
 // IZIбанк
 loadIziCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://izibank.com.ua/api/exchange/rates?type=card_kurs_info",
-    success: function(data) {
-      let exchengeCount = data.find(currency => currency.curr_short_name === "USD").sale;
-      document.querySelector('.izibank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-izi-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-0.00758*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value-15;
-        document.querySelector('.izibank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.izibank .card').classList.add("green")
-        } else {
-          document.querySelector('.izibank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadIziCard:', error);
+  let exchengeCount = iziCard
+  document.querySelector('.izibank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-izi-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-0.00758*(document.querySelector('.CountUAH').value/exchengeCount))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value-15;
+    document.querySelector('.izibank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.izibank .card').classList.add("green")
+    } else {
+      document.querySelector('.izibank .card').classList.add("red")
     }
-  });
+  }
 }; loadIziCard();
 loadIziCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://izibank.com.ua/api/exchange/rates?type=card_kurs",
-    success: function(data) {
-      let exchengeCount = data.find(currency => currency.curr_short_name === "USD").sale;
-      document.querySelector('.izibank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-izi-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.izibank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.izibank .cash').classList.add("green")
-        } else {
-          document.querySelector('.izibank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadIziCash:', error);
+  let exchengeCount = iziCash
+  document.querySelector('.izibank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-izi-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.izibank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.izibank .cash').classList.add("green")
+    } else {
+      document.querySelector('.izibank .cash').classList.add("red")
     }
-  });
+  }
 }; loadIziCash();
 
 
@@ -644,7 +558,7 @@ loadVostokCash = function() {
 
 // ТаскомБанк !!!
 loadTaskomCard = function() {
-  let exchengeCount = vostokCard
+  let exchengeCount = taskomCard
   document.querySelector('.taskombank .cardCount').textContent = exchengeCount;
   document.querySelector('.but-taskom-card').onclick = function valueCard() {
     const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
@@ -658,7 +572,7 @@ loadTaskomCard = function() {
   }
 }; loadTaskomCard();
 loadTaskomCash = function() {
-  let exchengeCount = vostokCash
+  let exchengeCount = taskomCash
   document.querySelector('.taskombank .cashCount').textContent = exchengeCount;
   document.querySelector('.but-taskom-cash').onclick = function valueCard() {
     const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
@@ -675,50 +589,32 @@ loadTaskomCash = function() {
 
 // ПівденнийБанк
 loadPivdenCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://bank.com.ua/api/uk/v1/rest-ui/find-mybank-course?date=1705269600",
-    success: function(data) {
-      let exchengeCount = data[0][3];
-      document.querySelector('.pivdenbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-pivden-card').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.pivdenbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.pivdenbank .card').classList.add("green")
-        } else {
-          document.querySelector('.pivdenbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPivdenCard:', error);
+  let exchengeCount = pivdenCard;
+  document.querySelector('.pivdenbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-pivden-card').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.pivdenbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.pivdenbank .card').classList.add("green")
+    } else {
+      document.querySelector('.pivdenbank .card').classList.add("red")
     }
-  });
+  }
 }; loadPivdenCard();
 loadPivdenCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://bank.com.ua/api/uk/v1/rest-ui/find-branch-course?date=1705269600",
-    success: function(data) {
-      let exchengeCount = data[0][3];
-      document.querySelector('.pivdenbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-pivden-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.pivdenbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.pivdenbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.pivdenbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPivdenCash:', error);
+  let exchengeCount = pivdenCash;
+  document.querySelector('.pivdenbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-pivden-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.pivdenbank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.pivdenbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.pivdenbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadPivdenCash();
 
 
@@ -848,50 +744,32 @@ loadIdeaCash = function() {
 
 // ЕксомБанк
 loadEximCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.eximb.com/services/v1/rates/?day=15&month=1&year=2024&lang=uk",
-    success: function(data) {
-      let exchengeCount = parseFloat(data.rates.cards.data[0].sell.replace(',', '.'))
-      document.querySelector('.eximbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-exim-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-(0.008*(document.querySelector('.CountUAH').value/exchengeCount)))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.eximbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.eximbank .card').classList.add("green")
-        } else {
-          document.querySelector('.eximbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadEximCard:', error);
+  let exchengeCount = ukreximCard
+  document.querySelector('.eximbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-exim-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-(0.008*(document.querySelector('.CountUAH').value/exchengeCount)))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.eximbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.eximbank .card').classList.add("green")
+    } else {
+      document.querySelector('.eximbank .card').classList.add("red")
     }
-  });
+  }
 }; loadEximCard();
 loadEximCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.eximb.com/services/v1/rates/?day=15&month=1&year=2024&lang=uk",
-    success: function(data) {
-      let exchengeCount = parseFloat(data.rates.cash.data[0].sell.replace(',', '.'))
-      document.querySelector('.eximbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-exim-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.eximbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.eximbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.eximbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadEximCash:', error);
+  let exchengeCount = ukreximCash
+  document.querySelector('.eximbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-exim-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.eximbank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.eximbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.eximbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadEximCash();
 
 
@@ -959,50 +837,32 @@ loadKredoCash = function() {
 
 // МіжнарБанк
 loadMignarinvestCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://ii-bank.ua/course/currency?n=2&Type.Value=Card&City=1",
-    success: function(data) {
-      let exchengeCount = data.data.list[0].rates[0].saleRate;
-      document.querySelector('.mignarinvestbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-mignarinvest-card').onclick = function valueCard() {
-        const income = (document.querySelector('.CountUAH').value/exchengeCount-(0.008*(document.querySelector('.CountUAH').value/exchengeCount)))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.mignarinvestbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.mignarinvestbank .card').classList.add("green")
-        } else {
-          document.querySelector('.mignarinvestbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadMignarinvestCard:', error);
+  let exchengeCount = mignarinvestCard;
+  document.querySelector('.mignarinvestbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-mignarinvest-card').onclick = function valueCard() {
+    const income = (document.querySelector('.CountUAH').value/exchengeCount-(0.008*(document.querySelector('.CountUAH').value/exchengeCount)))*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.mignarinvestbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.mignarinvestbank .card').classList.add("green")
+    } else {
+      document.querySelector('.mignarinvestbank .card').classList.add("red")
     }
-  });
+  }
 }; loadMignarinvestCard();
 loadMignarinvestCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://ii-bank.ua/course/currency?n=2&Type.Value=Valuta&City=1",
-    success: function(data) {
-      let exchengeCount = data.data.list[0].rates[0].saleRate;
-      document.querySelector('.mignarinvestbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-mignarinvest-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.mignarinvestbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.mignarinvestbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.mignarinvestbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadMignarinvestCash:', error);
+  let exchengeCount = mignarinvestCash
+  document.querySelector('.mignarinvestbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-mignarinvest-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.mignarinvestbank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.mignarinvestbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.mignarinvestbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadMignarinvestCash();
 
 
@@ -1163,50 +1023,32 @@ loadKominvestCash = function() {
 
 // ПіреусБанк
 loadPiraeusCard = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.piraeusbank.ua/ua/get-exchange",
-    success: function(data) {
-      let exchengeCount = data.winbankRows[0].columns[2].title;
-      document.querySelector('.piraeusbank .cardCount').textContent = exchengeCount;
-      document.querySelector('.but-piraeus-card').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.piraeusbank .card').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.piraeusbank .card').classList.add("green")
-        } else {
-          document.querySelector('.piraeusbank .card').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPiraeusCard:', error);
+  let exchengeCount = piraeusCard;
+  document.querySelector('.piraeusbank .cardCount').textContent = exchengeCount;
+  document.querySelector('.but-piraeus-card').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.piraeusbank .card').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.piraeusbank .card').classList.add("green")
+    } else {
+      document.querySelector('.piraeusbank .card').classList.add("red")
     }
-  });
+  }
 }; loadPiraeusCard();
 loadPiraeusCash = function() {
-  $.ajax({
-    method: "GET",
-    url: "https://www.piraeusbank.ua/ua/get-exchange",
-    success: function(data) {
-      let exchengeCount = data.rows[2].columns[1].title;
-      document.querySelector('.piraeusbank .cashCount').textContent = exchengeCount;
-      document.querySelector('.but-piraeus-cash').onclick = function valueCard() {
-        const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
-        document.querySelector('.piraeusbank .cash').textContent = income.toFixed(2);
-        
-        if (income > 0) {
-          document.querySelector('.piraeusbank .cash').classList.add("green")
-        } else {
-          document.querySelector('.piraeusbank .cash').classList.add("red")
-        }
-      }
-    },
-    error: function(error) {
-      console.error('Error loadPiraeusCash:', error);
+  let exchengeCount = piraeusCash;
+  document.querySelector('.piraeusbank .cashCount').textContent = exchengeCount;
+  document.querySelector('.but-piraeus-cash').onclick = function valueCard() {
+    const income = document.querySelector('.CountUAH').value/exchengeCount*document.querySelector('.exchengeCount').value-document.querySelector('.CountUAH').value;
+    document.querySelector('.piraeusbank .cash').textContent = income.toFixed(2);
+    
+    if (income > 0) {
+      document.querySelector('.piraeusbank .cash').classList.add("green")
+    } else {
+      document.querySelector('.piraeusbank .cash').classList.add("red")
     }
-  });
+  }
 }; loadPiraeusCash();
 
 
